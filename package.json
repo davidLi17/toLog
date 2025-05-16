@@ -12,10 +12,51 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "toLog",
+      "properties": {
+        "toLog.VarPilotSymbol": {
+          "type": "string",
+          "default": "::",
+          "description": "Variable Identifier|变量标识符号"
+        },
+        "toLog.QuotationMark": {
+          "type": "string",
+          "enum": [
+            "single",
+            "double"
+          ],
+          "default": "double",
+          "description": "Quotation Mark Type (Single or Double)|引号类型（单引号或双引号）"
+        },
+        "toLog.ShowLogSemicolon": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Semicolon at the End of console.log|是否在 console.log 语句末尾显示分号"
+        },
+        "toLog.LogMethod": {
+          "type": "string",
+          "default": "console.log",
+          "description": "Log Method (e.g., console.log, console.info)|日志方法（如：console.log, console.info 等）"
+        }
+      }
+    },
     "commands": [
       {
         "command": "toLog.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "toLog.qlog",
+        "title": "insert Log to next line"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "toLog.qlog",
+        "key": "ctrl+1",
+        "mac": "cmd+1",
+        "when": "editorTextFocus"
       }
     ]
   },

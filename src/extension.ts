@@ -1,6 +1,7 @@
 // 模块 'vscode' 包含了 VS Code 的扩展 API
 // 导入该模块，并在代码中用 vscode 作为别名引用
 import * as vscode from "vscode";
+import { quickLog } from "./ctrl-key";
 
 // 当你的扩展被激活时会调用此方法
 // 你的扩展在第一次执行命令时被激活
@@ -17,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
     // 向用户显示一个消息框
     vscode.window.showInformationMessage("Hello World from toLog!");
   });
-
+  context.subscriptions.push(quickLog);
   context.subscriptions.push(disposable);
 }
 
