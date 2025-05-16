@@ -1,71 +1,66 @@
-# toLog README
+# toLog
 
-This is the README for your extension "toLog". After writing up a brief description, we recommend including the following sections.
+一个简单而强大的 VS Code 日志生成扩展，帮助你快速在代码中插入格式化的日志语句。
 
-## Features
+## 特性
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- 🚀 快速生成日志：通过快捷键快速插入日志语句
+- 📝 智能缩进：自动保持与当前代码相同的缩进级别
+- 🎨 高度可定制：支持自定义日志格式和样式
+- 📍 自动定位：包含文件路径和行号信息
+- ⚡️ 选中即用：选中变量后自动生成对应的日志语句
 
-For example if there is an image subfolder under your extension project workspace:
+## 使用方法
 
-\!\[feature X\]\(images/feature-x.png\)
+1. 选中想要打印的变量或表达式
+2. 按下快捷键 `Cmd+1` (Mac) / `Ctrl+1` (Windows/Linux)
+3. 自动在下一行插入格式化的日志语句
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+示例：
+```javascript
+const user = { name: 'John' };
+// 选中 user 后按下快捷键，将生成：
+console.log("src/index.js:2:: user", user);
+```
 
-## Requirements
+## 扩展设置
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+此扩展提供以下可配置项：
 
-## Extension Settings
+* `toLog.VarPilotSymbol`: 变量标识符号 (默认: `"::"`)
+* `toLog.QuotationMark`: 引号类型，可选 `'single'` 或 `'double'` (默认: `"double"`)
+* `toLog.ShowLogSemicolon`: 是否在日志语句末尾显示分号 (默认: `true`)
+* `toLog.LogMethod`: 日志方法，如 "console.log"、"console.info" 等 (默认: `"console.log"`)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 快捷键
 
-For example:
+| 命令     | Mac     | Windows/Linux | 说明                 |
+| -------- | ------- | ------------- | -------------------- |
+| 插入日志 | `Cmd+1` | `Ctrl+1`      | 在下一行插入日志语句 |
 
-This extension contributes the following settings:
+## 安装
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+在 VS Code 中搜索 "toLog" 并安装，或者从 [VS Code Marketplace](https://marketplace.visualstudio.com) 下载安装。
 
-## Known Issues
+## 更新日志
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### 0.0.1 (初始版本)
+- ✨ 基础日志生成功能
+- 🎨 自定义配置支持
+- ⌨️ 快捷键支持
 
-## Release Notes
+## 许可证
 
-Users appreciate release notes as you update your extension.
+MIT
 
-### 1.0.0
+## 贡献
 
-Initial release of ...
+欢迎提交 Issues 和 Pull Requests！
 
-### 1.0.1
+## 作者
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+[你的名字/组织]
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**享受编码！** 🎉
